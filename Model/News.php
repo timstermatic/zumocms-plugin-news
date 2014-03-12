@@ -22,4 +22,21 @@ class News extends AppModel {
 			)
 		)
 	);
+
+
+/**
+ * recent news
+ */
+        public function _recent($limit=3) 
+        {
+            return $this->find('all', array(
+                'conditions'=>array(
+                   'release_date'<=date('Y-m-d'), 
+                   'archive_date'>date('Y-m-d'), 
+                   'published'=>1
+                ),
+                'limit'=>$limit
+            ));
+        }
+
 }
