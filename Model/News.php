@@ -3,6 +3,14 @@
  * News Model
  */
 class News extends AppModel {
+
+/**
+ * default order
+ */
+    public $order = array('release_date'=>'desc');
+
+
+
 /**
  * validate property
  */
