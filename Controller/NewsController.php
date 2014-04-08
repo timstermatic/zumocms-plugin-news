@@ -59,14 +59,14 @@ class NewsController extends AppController {
 /** 
  * delete
  */
-	 public function delete($id=null) {
+	 public function cms_delete($id=null) {
 	 	$this->News->id = $id;
 		if(!$this->News->exists()) {
 			throw new NotFoundExeption('News story not found');
 		}
 		$this->News->delete($id);
 		$this->Session->setFlash('News story deleted','flash_success');
-		$this->redirect(array('action'=>'action'));
+		$this->redirect(array('action'=>'index'));
 	}
 
 
